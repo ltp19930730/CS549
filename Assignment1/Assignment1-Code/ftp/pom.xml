@@ -30,8 +30,8 @@
 
 		<!-- Lookup the server factory at the rmi registry at this port under this 
 			dns name. -->
-		<server.internal-ip>10.50.198.208</server.internal-ip>
-		<server.external-dns>ec2-23-20-36-165.compute-1.amazonaws.com</server.external-dns>
+		<server.internal-ip>172.31.22.63</server.internal-ip>
+		<server.external-dns>ec2-54-244-194-189.us-west-2.compute.amazonaws.com</server.external-dns>
 		<server.userid>ec2-user</server.userid>
 		<server.port>5050</server.port>
 		<server.name>ftpd</server.name>
@@ -39,7 +39,7 @@
 
 		<!-- If testing server on Windoze, this will have to be modified to ensure 
 			the path does not contain spaces, otherwise RMI will barf during stack inspection. -->
-		<client.home>d:</client.home>
+		<client.home>${user.home}</client.home>
 		<client.testdir>${client.home}/tmp/cs549/ftp-test</client.testdir>
 
 		<!-- Where to distribute jar files (using mvn package). -->

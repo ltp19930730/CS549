@@ -56,7 +56,7 @@ public class Client {
 	}
 	
 	InetAddress serverAddress;
-	private static InetAddress host;
+
 
 	public Client() {
 		try {
@@ -71,8 +71,6 @@ public class Client {
 			String serverMachine = (String) props.get("server.machine");
 			String serverName = (String) props.get("server.name");
 			int serverPort = Integer.parseInt((String) props.get("server.port"));
-			String clientIp = (String)props.get("client.ip");
-			this.host = InetAddress.getByName(clientIp);
 			/*
 			 * TODO: Get a server proxy.
 			 */ 
@@ -209,7 +207,7 @@ public class Client {
 		private ServerSocket dataChan = null;
 
 		private InetSocketAddress makeActive() throws IOException {
-			dataChan = new ServerSocket(0,5,host);
+			dataChan = new ServerSocket(0);
 			mode = Mode.ACTIVE;
 			/* 
 			 * Note: this only works (for the server) if the client is not behind a NAT.
